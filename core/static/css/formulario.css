@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Permanent+Marker&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+:root {
+    --color-red: #E63946;
+    --color-white: #FFFFFF;
+    --color-blue: #273c5a;
+}
+
+ html{
+    height: 100%;
+    margin: 0;
+    padding: 0%;
+ }
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(#31587a, #6b9aaa);
+    background-repeat: initial;
+}
+
+.full-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#31587a, #6b9aaa);
+
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    height: 85%;
+    width: 75%;
+    font-family: 'Roboto', sans-serif; 
+}
+
+.img-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+}
+
+.img-form {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 13%;
+    color: white;
+    font-size: large;
+    font-weight: 600;
+    
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;   
+    width: 50%;
+    height: 100%;
+    padding: 0% 3% 0px;
+    background: rgb(39 39 39);
+    border-radius: 0px 10px 10px 0px;
+}
+
+.form-container h2 {
+    flex-wrap: wrap;
+    margin: 0 0 30px;
+    padding: 0;
+    padding-top: 25px;
+    font-size: 30px;
+    color: #4cc9f0;
+    text-align: center;
+}
+
+.element {
+    font-size: large;
+}
+
+.element label {
+    color: white;
+    font-weight: 600;
+}
+
+.element  input {
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    margin-bottom: 5%;
+    outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+input {
+    text-align: center;
+}
+
+
+
+#submit {
+    font-weight: 600;
+    font-family: inherit;
+    background-color: #f72585;
+    border-radius: 5px 5px 5px 5px;
+    width: 70%;
+    color: white;
+    border: none;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 15px;
+    margin-top: 30px;
+    transition: all .2s;
+    margin-bottom: 10px;
+
+    
+}
+
+#submit:hover {
+    transform: scale(1.06);
+}
+
+.form-submit {
+    display: flex;
+    justify-content: center;
+}
+
+.register-group {
+    display: flex;
+    font-size: large;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 5%;
+    justify-content: space-between;
+}
+
+.register-group input {
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    position: relative;
+}   
+
+.element.error input {
+    border-color: #ff3860;
+}
+
+.element.error p {
+    color: #ff3860;
+}
+.element.error i.fa-solid.fa-circle-exclamation {
+    visibility: visible;
+    width: 2%;
+    height: 2%;
+    color: #ff3860;
+    
+}
+
+.element.success i.fa-solid.fa-checkheck {
+    visibility: visible;
+    
+}
+
+.element.success input {
+    border-color: #2ecc71;  
+}
+
+.element i {
+    visibility: hidden;
+    position: absolute;
+    right: 12px;
+    bottom: 40px;
+}
+
+.pe-error {
+    position: absolute;
+    margin: 0;
+    font-size: 13px;
+}
+
+span {
+    font-family: inherit;
+    color: var(--color-white);
+    margin-right: 5px;
+}
+
+.element.success i.fa-solid.fa-check{
+    visibility: visible;
+    width: 2%;
+    height: 2%;
+    color: #2ecc71;
+}
+
+.register-group-element {
+    width: 47%;
+    position: relative;
+}
+
+.error-form {
+    color: red;
+    margin-left: 3%;
+}
+
+.terms-container {
+    display: flex;
+    height: 50%;
+    
+    align-items: flex-end;
+    padding-top: 30px
+}
+
+.link {
+    text-decoration: none;
+    color: #f72585;
+    font-family: 'Roboto';
+    font-weight: 600;
+}
+
+.s-pass {
+    font-family: 'Roboto';
+    font-weight: 600;
+    text-align: center;
+}
+
+
+
+.terms-container{
+    align-items: center;
+    justify-content: center;
+}
+
+.terms {
+    color: white;
+    overflow-y: scroll;
+    height: 80%;
+    width: 100%;
+}
+
+
+/* input[type="checkbox"]:checked {
+    box-shadow: 0 0 0 3px #f72585;
+    background-color: #f72585;
+    color: #f72585;
+  } */
+
+.for {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+@media screen and (min-width: 461px) and (max-width: 1118px) {
+    .img-container{
+        display: none;
+    }
+
+    .form-container {
+        width: 100%;
+        border-radius: 10px 10px 10px 10px;
+        background: rgba(0, 0, 0, 0.7);
+        padding-bottom: 2em;
+    }
+}
+
+
+input[type=checkbox]:checked {
+    content: "\2713";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 15px;
+    color: #c41515;
+    text-align: center;
+    line-height: 15px;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 670px) {
+    .img-container{
+        display: none;
+    }
+    .form-container {
+        margin: 15px 0 15px 0;
+        width: 100%;
+        height: 77em;
+        border-radius: 10px 10px 10px 10px;
+        background: rgba(0, 0, 0, 0.7);
+    }
+    .register-group {
+        flex-direction: column;
+        align-content: center;
+        margin-top: 0;
+
+    }
+    .register-group-element {
+        width: 95%;
+        margin-top: 20%;
+    }
+
+    body {
+        height: auto;
+    }
+}

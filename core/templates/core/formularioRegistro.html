@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {%load static%}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/formulario.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+crossorigin="anonymous"></script> 
+    <script src="https://kit.fontawesome.com/4aa75f61b0.js" crossorigin="anonymous"></script>
+
+    <title>Formulario registro</title>
+  </head>
+  <body>
+
+    <div class="full-container">
+
+      <div class="container">
+
+        <div class="img-container">
+          <p class="image-caption"></p>
+          <img class="img-form" src="{% static 'image/portrait-wolf-suit-hand-drawn-illustration-vector-77711011.jpg' %}" alt="">
+        </div>
+      
+        <div class="form-container">
+          <h2 class="form-title">Hazte Socio</h2>
+
+          <div class="login">
+            <span>¿Ya eres socio? </span>
+            <a class="link" href="{% url 'Login' %}">Iniciar Sesión</a>
+          </div>
+
+          <form class="for" action="" id="form" name="forma" method="post">
+  
+            <div class="register-group">
+              <div class="element register-group-element">
+                <label for="usuario">Nombre de Usuario</label>
+                <span class="error-form" id="nusuario-error-msg"></span>
+                <input class="" type="text" id="usuario" name="usuario"  autocomplete="off" spellcheck="false"/>
+                <i class="fa-solid fa-circle-exclamation error-icon"></i>
+                <i class="fa-solid fa-check success-icon"></i>
+                <p class="pe-error"></p>
+              </div>
+  
+              <div class="element register-group-element">
+                <label for="nombre">Nombre Completo</label>
+                <span class="error-form" id="ncompleto-error-msg"></span>
+                <input type="text" id="nombre" name="nombre" value="" spellcheck="false"  autocomplete="off">
+                <i class="fa-solid fa-circle-exclamation error-icon"></i>
+                <i class="fa-solid fa-check success-icon"></i>
+                <p class="pe-error"></p>
+              </div>
+            </div>
+  
+            <div class="register-group">
+
+              <div class="element register-group-element">
+
+                <label for="email">Email</label><br />
+                <input type="text" id="email" name="email" spellcheck="false" autocomplete="off" />
+                <i class="fa-solid fa-circle-exclamation error-icon"></i>
+                <i class="fa-solid fa-check success-icon"></i>
+                <p class="pe-error"></p>
+                <span class="error-form" id="email-error-msg"></span>
+              </div>
+  
+              <div class="element register-group-element">
+                <label for="numero">Número</label><br />
+                <input type="number" name="numero" id="numero" autocomplete="off" />
+                <i class="fa-solid fa-circle-exclamation error-icon"></i>
+                <i class="fa-solid fa-check success-icon"></i>
+                <p class="pe-error"></p>
+              </div>
+            </div>
+  
+            <div class="register-group">
+              <div class="element register-group-element">
+                <label for="password">Contraseña</label>
+                <span class="error-form" id="pass-error-msg"></span>
+                <input type="password" id="password" name="password">
+                <i class="fa-solid fa-circle-exclamation error-icon"></i>
+                <i class="fa-solid fa-check success-icon"></i>
+                <p class="pe-error"></p>
+              </div>
+  
+                <div class="element register-group-element">
+                  <label for="confirm-password">Confirmar Contraseña</label>
+                  <span class="error-form" id="cpass-error-msg"></span>
+                  <input type="password" id="confirm-password" name="confirm-password">
+                  <i class="fa-solid fa-circle-exclamation error-icon"></i>
+                  <i class="fa-solid fa-check success-icon"></i>
+                  <p class="pe-error"></p>
+                </div>
+
+              </div>
+
+              <div class="terms-container">
+                <input type="checkbox" name="terms" id="clasica" value="clasica" />
+                <span>Acepto la</span>
+                <a class="link" href="{% url 'terminos' %}" target="blank">Política de Privacidad</a>
+              </div>
+  
+              <div class="form-submit">
+                <input type="submit" value="Unirme" id="submit">
+              </div>
+  
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </body>
+  <script src="{% static 'js/formularioApp.js' %}"></script>
+</html>

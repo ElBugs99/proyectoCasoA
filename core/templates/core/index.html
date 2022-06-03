@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monnos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/4aa75f61b0.js" crossorigin="anonymous"></script>
+    
+</head>
+{%load static%}
+  <body>
+      <script>
+          const formulario = () => {
+              alert("Se ha registrado exitosamente")
+              window.location.reload()
+          }
+
+          const productosClick = () => document.location.href = 'https://www.google.cl';
+
+      </script>
+      <!--Barra de navegación-->
+      <div class="desktop">
+        <nav class="navbar navbar-expand-lg container-fluid navbar-dark navigation">
+            <img class="logo" src="{% static 'image/monnos-white.svg'%}" alt="">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse full-nav" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item nav-li">
+                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                  </li>
+                  <li class="nav-item nav-li">
+                    <a class="nav-link" href="{% url 'productos' %}">Productos</a>
+                  </li>
+                  <li class="nav-item nav-li">
+                    <a class="nav-link" href="#">Contacto</a>
+                  </li>
+                  <li class="nav-item nav-li">
+                    <a class="nav-link" href="{% url 'Login' %}">Iniciar sesión</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        <div>
+
+            <!--Barra movil-->
+            <div class="navigation-bar-container">
+                <ul class="navigation-bar">
+                    <li class="navigation-bar-item">
+                        <a class="navigation-bar-link link-active" href="{% url 'index' %}">Inicio</a>
+                    </li>
+                    <li class="navigation-bar-item">
+                        <a class="navigation-bar-link" href="{% url 'productos' %}">Productos</a>
+                    </li>
+                    <li class="navigation-bar-item">
+                        <a class="navigation-bar-link" href="">Contacto</a>
+                    </li>
+                    <li class="navigation-bar-item">
+                      <a class="navigation-bar-link" href="{% url 'Login' %}">Únete</a>
+                  </li>
+                </ul>
+            </div>
+        
+            <!--carrousel-->
+            <div class="full-container">
+
+              <div class="text">
+                <div class="info">
+                  <p>Hazte socio</p>
+                  <i class="fa-solid fa-hands-holding-circle icono"></i>
+                  <span>Para ser socio debes realizar un aporte económico mensual a nuestra causa.
+                    Con tu donación podremos solventar los gastos de alimentos,
+                     atención veterinaria y todas las necesidades básicas de nuestros rescatados.</span><br/>
+                     <button class="adoptar-boton"><a class="adoptar-link" href="{% url 'formularioRegistro' %}">Únete</a></button>
+                </div>
+              </div>
+
+              <div class="carousel-cont">
+                <div id="carouselExampleIndicators" class="carousel slide carousel-fade carousel-container" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'image/perro-blanco-en-fondo-azul.jpg' %}" class="d-block w-100" alt="perro1"">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'image/perro_blanco.jpg' %}" class="d-block w-100" alt="perro2"">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'image/puppies-blue.jpg' %}" class="d-block w-100" alt="perro3"">
+                    </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            
+            
+            </div>
+        </div>
+
+        <!--Productos populares-->
+        <div class="Products productos-populares-2">
+            <div class="titulo-contenedor-productos">
+                <p class="titulo-productos">Productos populares</p>
+            </div>
+
+            <div class="contenedor-productos container-fluid">
+                <div class="producto" onclick="productosClick()">
+                    <img class="producto-img" src="{% static 'image/Producto1.jpg'%}">
+                    <!-- <p class="product-paragraph">Masticable</p>
+                    <button class="producto-button">Ver producto</button> -->
+                </div>
+
+                <div class="producto" onclick="productosClick()">
+                    <img src="{% static 'image/Producto2.jpg'%}" class="producto-img">
+                </div>
+
+                <div class="producto" onclick="productosClick()">
+                    <img src="{% static 'image/Producto3.jpg'%}" class="producto-img">
+                </div>
+
+            </div>
+            <div class="see-more">
+                <button class="producto-button"><a href="{% url 'productos' %}">Ver todos los productos</a></button>
+                <a href="{% url 'productos' %}"></a>
+            </div>
+        </div>
+        <!-- formulario para subscribirse -->
+        <div class="container-fluid">
+          <div class="row formulario_subscripcion">
+            <div class="col-sm-12 col-md-6 col-lg-4 text_formulario">
+              <p class="fuente parrafo-titulo">
+                Escríbenos</p>
+                 <p class="fuente parrafo">Si tienes dudas sobre tu compra o sólo quieres transmitirnos alguna inquietud,
+                    envíanos tu mensaje a través del siguiente formulario de contacto</p>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4  formulario">
+              <form class="form-container">
+                <div class="labels"><label for="nombre">Nombre Completo</label></div>
+                <input type="text" class="fuente form-control form-control-sm" id="nombre" placeholder="">
+                <div class="row">
+                  
+                  <div class="col">
+                  </div>
+                  <div class="col">
+                    
+                  </div>
+                </div>
+                <div class="labels"><label for="email">Email</label></div>
+                <input type="text" class="fuente form-control form-control-sm text-dark" id="email" placeholder="">
+
+                <div class="labels"><label for="asunto">Asunto</label></div>
+                <input type="text" class="fuente form-control form-control-sm text-dark" id="asunto" placeholder="">
+
+                <div class="labels"><label for="exampleFormControlTextarea1">Comentario</label></div>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+                <button onclick="formulario()" type="button" class="btn boton_producto">Enviar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!--Preguntas frecuentes-->
+        <div class="container-fluid">
+          <div class="row preguntas_frecuentes">
+            <div class="col-sm-12 col-md-12 col-lg-6 titulof">
+              <h1 class="fuente titulo_preg_frecuentes">PREGUNTAS FRECUENTES</h1>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-6 accordion acordion_preguntas" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header texto " id="headingOne">
+                  <button class="accordion-button collapsed fuente tit_acordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    ¿Cómo comprar?
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse texto_acordion_preg_frecuentes" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body fuente text_acordion">
+                    Vaya a la Tienda. Luego seleccione el producto que desea comprar haciendo
+                     click en la imagen o en el botón agregar al carrito. Su carrito se actualizará
+                      con el producto y el valor correspondiente. Haga click en el carrito y siga las
+                       instrucciones. Una vez finalizada su compra recibirá un correo electrónico
+                        confirmando la transacción.
+                    </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed fuente tit_acordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    ¿Cuáles son los medios de pago aceptados?
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse texto_acordion_preg_frecuentes" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div class="accordion-body fuente text_acordion">
+                    Usted puede pagar por transferencia bancaria,
+                     tarjetas de crédito, RápiPago y PagoFácil.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed fuente tit_acordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                    ¿Hacen envíos a todo el país?
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse texto_acordion_preg_frecuentes" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div class="accordion-body fuente text_acordion">
+                    Se realizan envíos a todo el país coordinando con el comprador.
+                     Los envíos se harán a través de los servicios de logística
+                      que donan las empresas aliadas a la Fundación.
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="adoptar-container">
+      <div class="adoptar-texto">
+        <p class="adoptar-titulo">Quiero Adoptar</p>
+        <span>¿Buscas al nuevo integrante de tu familia? Te invitamos a conocer a nuestros rescatados.</span>
+      </div>
+      <br/>
+        <button class="adoptar-boton"><a class="adoptar-link" href="{% url 'adoptar' %}">¡Entra aquí!</a></button>
+    </div>
+
+    <!--Parte final-->
+    <footer class="footer-section">
+        <p class="footer-text">Elbugs &copy; Todos los derechos reservados.</p>
+    </footer>
+    </div>
+    <div class="mobile">
+      <div class="hey"></div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/miCss.css' %}">
+   
+  </body>
+</html>

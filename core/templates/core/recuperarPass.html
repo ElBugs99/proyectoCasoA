@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {%load static%}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/formulario.css'%}">
+    <title>Document</title>
+  </head>
+  <body>
+      <div class="full-container">
+          <div class="container">
+            
+            <div class="img-container">
+                <p class="image-caption"></p>
+                <img class="img-form" src="{% static 'image/persian-cat.jpg'%}" alt="">  
+            </div>
+            
+            <div class="form-container">
+                <h2 class="form-title">Recuperar Contraseña</h2>
+        
+                <div class="login">
+                    <span>Volver al </span>
+                    <a class="link" href="{% url 'Login' %}">Inicio de Sesión</a>
+                </div><br/><br/>
+
+                <div class="reset-pass">
+
+                    <div class="login">
+                        <span class="s-pass">Ingresa tu email y te enviaremos un correo electrónico para restaurar tu contraseña.</span>
+                    </div><br/><br/><br/>
+    
+                      <form class="for" action="" id="form" name="forma" method="post">
+                          
+                        <div class="element">
+    
+                            <label for="email">Email</label><br />
+                            <input type="text" id="email" name="email" spellcheck="false" autocomplete="off" />
+                            <i class="fa-solid fa-circle-exclamation error-icon"></i>
+                            <i class="fa-solid fa-check success-icon"></i>
+                            <p></p>
+                            <span class="error-form" id="email-error-msg"></span>
+    
+                        </div>
+
+                        <div class="form-submit">
+                            <input type="submit" value="Restaurar" id="submit">
+                          </div>
+
+                      </form>
+
+                </div>
+                
+              </div>
+          </div>
+      </div>
+  </body>
+</html>
