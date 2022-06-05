@@ -12,6 +12,39 @@
 </head>
 {%load static%}
   <body>
+    <h1>hola {{nombre}}</h1>
+    <h1>Esta es una p&aacute;gina de Prueba</h1>
+        <h2>Bienvenida {{nombre}}</h2>
+        <h3>Mi comida favorita es: {{comidas.1}}</h3>
+        <h3>Listado de Comidas</h3>
+        <ol>
+            {%for auxComida in comidas%}
+                <li>{{auxComida}}</li>
+            {%endfor%}
+        </ol>
+        <h3>{{nombre}} tiene un hijo llamado {{hijo.nombre}} que tiene {{hijo.edad}} años</h3>
+
+
+
+        <table class="table table-bordered" id="categorias">
+          <thead class="table-dark">
+              <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Marca</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">.</th>
+              </tr>
+          </thead>
+          {% for auxVe in productos %}
+          <tr>
+              <td>{{auxVe.id_producto}}</td>
+              <td>{{auxVe.marca_producto}}</td>
+              <td>{{auxVe.nombre_producto}}</td>
+              
+          </tr>
+          {% endfor %}
+      </table>
+
       <script>
           const formulario = () => {
               alert("Se ha registrado exitosamente")

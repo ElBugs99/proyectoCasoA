@@ -1,10 +1,24 @@
 from django.shortcuts import render
+from django.template import loader
+
+from core.models import Producto
 
 # Create your views here.
 
 def index(request):
+    productos = Producto.objects.all()
+    lista=["Pollo con Papas Fritas", "Pastel de Choclo", "Porortos Granados"]
+    hijo=Persona("Alan Brito","2")
+    
+    datos=({"nombre":"Anita La Huerfanita",
+              "comidas": lista,
+              "hijo":hijo,
+              "productos":productos
+              })
+    return render(request, 'core/index.html', datos)
 
-    return render(request, 'core/index.html')
+
+#   return render(request,'core/test.html',contexto)
 
 def productos(request):
 
@@ -43,3 +57,12 @@ def prueba1(request):
     datos={"nombre": "Fulano"}
 
     return render(request, 'core/index.html', datos)
+
+class Persona:
+    def __init__(self, nombre,edad):
+        self.nombre=nombre
+        self.edad=edad
+        super().__init__()
+
+
+
