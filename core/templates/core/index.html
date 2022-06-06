@@ -35,11 +35,11 @@
                   <th scope="col">.</th>
               </tr>
           </thead>
-          {% for auxVe in productos %}
+          {% for i in Product %}
           <tr>
-              <td>{{auxVe.id_producto}}</td>
-              <td>{{auxVe.marca_producto}}</td>
-              <td>{{auxVe.nombre_producto}}</td>
+              <td>{{i.id_producto}}</td>
+              <td>{{i.marca_producto}}</td>
+              <td>{{i.nombre_producto}}</td>
               
           </tr>
           {% endfor %}

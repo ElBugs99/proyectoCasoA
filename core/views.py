@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from django.template import loader
 
-from core.models import Producto
+from core.models import Product
 
 # Create your views here.
 
 def index(request):
-    productos = Producto.objects.all()
+    productos = Product.objects.all()
     lista=["Pollo con Papas Fritas", "Pastel de Choclo", "Porortos Granados"]
     hijo=Persona("Alan Brito","2")
     
