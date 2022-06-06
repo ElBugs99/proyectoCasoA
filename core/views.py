@@ -65,4 +65,5 @@ class Persona:
         super().__init__()
 
 
-
+def formProducto(request):
+    return render(request, 'core/formProducto.html')

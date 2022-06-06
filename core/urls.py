@@ -1,6 +1,6 @@
 
 from django.urls import path
-from .views import Login, aporte, formularioRegistro, index, productos, adoptar, form, recuperarPass, terminos
+from .views import Login, aporte, formProducto, formularioRegistro, index, productos, adoptar, form, recuperarPass, terminos
 
 urlpatterns = [
     path('', index, name="index"),
@@ -11,7 +11,8 @@ urlpatterns = [
     path('form/', form, name="form"),
     path('formRegistro/', formularioRegistro, name="formularioRegistro"),
     path('recuperarPass/', recuperarPass, name="recuperarPass"),
-    path('terminos/', terminos, name="terminos")
+    path('terminos/', terminos, name="terminos"),
+    path('formProducto/', formProducto, name="formProducto")
 ]
 
 #path('formulario.html', formulario)
