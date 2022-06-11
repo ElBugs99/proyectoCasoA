@@ -1,60 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    {%load static%}
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/formulario.css'%}">
-    <title>Formulario Login</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <div class="full-container">
-      <div class="container">
 
-        <div class="img-container">
-          <p class="image-caption"></p>
-          <img class="img-form" src="{% static 'image/Labrador.jpg' %}" alt="">
+<head>
+  {%load static%}
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{% static 'css/formulario.css'%}">
+  <title>Formulario Login</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="full-container">
+    <div class="container">
+
+      <div class="img-container">
+        <p class="image-caption"></p>
+        <img class="img-form" src="{% static 'image/Labrador.jpg' %}" alt="">
+      </div>
+
+      <div class="form-container">
+        <h2>Login</h2>
+
+        <div class="login">
+          <span>¿No eres socio?</span>
+          <a class="link" href="{% url 'formularioRegistro' %}">Registrate</a>
         </div>
 
-        <div class="form-container">
-          <h2>Login</h2>
+        <form class="for" action="" id="forma" name="forma" method="post">
 
-          <div class="login">
-            <span>¿No eres socio?</span>
-            <a class="link" href="{% url 'formularioRegistro' %}">Registrate</a>
+          <div class="element">
+            <label for="usuario">Usuario</label>
+            <input type="text" id="usuario" name="usuario" spellcheck="false" autocomplete="off" />
           </div>
 
-          <form class="for" action="" id="forma" name="forma" method="post">
-
-              <div class="element">
-                  <label for="usuario">Usuario</label>
-                  <input type="text" id="usuario" name="usuario" spellcheck="false" autocomplete="off"/>
+          <div class="element">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" ">
               </div>
 
-              <div class="element">
-                <label for="password">Contraseña</label>
-                <input type="password" id="password" name="password" ">
-              </div>
+              <div class=" element">
+            <label for="email">Email</label><br />
+            <input type="text" id="email" name="email" spellcheck="false" autocomplete="off" />
+          </div>
 
-              <div class="element">
-                <label for="email">Email</label><br />
-                <input type="text" id="email" name="email" spellcheck="false" autocomplete="off" />
-              </div>
+          <div class="login">
+            <a class="link" href="{% url 'recuperarPass' %}">¿Olvidaste tu contraseña?</a>
+          </div>
 
-              <div class="login">
-                <a class="link" href="{% url 'recuperarPass' %}">¿Olvidaste tu contraseña?</a>
-              </div>
+          <div class="form-submit">
+            <input type="submit" value="Iniciar Sesión" id="submit">
+          </div>
 
-              <div class="form-submit">
-                <input type="submit" value="Iniciar Sesión" id="submit">
-              </div>
-  
-          </form>
-        </div>
+        </form>
       </div>
     </div>
-  </body>
-  <script src=""></script>
+  </div>
+</body>
+<script src=""></script>
+
 </html>
