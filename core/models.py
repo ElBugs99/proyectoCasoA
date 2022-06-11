@@ -1,33 +1,46 @@
+from distutils.command.upload import upload
 from django.db import models
 
-# Create your models here.
+# #modelo para productos
 
 class Marca(models.Model):
-    nombre =models.CharField(max_length=50)
-
-    def __str__(self) -> str:
-        return self.nombre
-
-class Product(models.Model):
-    id_producto=models.IntegerField( primary_key=True, verbose_name='Id')
-    nombre_producto= models.CharField(max_length=20, null=True, blank=True, verbose_name='Nombre Producto')
-    precio_producto= models.IntegerField( verbose_name='Precio Producto')
-    descripcion= models.TextField(max_length=50, null=True, verbose_name='Descripcion Producto')
-    stock_producto= models.IntegerField( verbose_name='Stock Producto')
-    marca = models.ForeignKey(Marca, on_delete=models.PROTECT)
-    #categoria=models.ForeignKey(Categoria, on_delete=models.CASCADE)
-
+    nombre = models.CharField(max_length=50)
+    categoria = models.CharField(max_length=45)
+    
     def __str__(self):
-        #toString
-        return self.nombre_producto
-
-
-
-# class Vehiculo(models.Model):
-#     patente=models.CharField(max_length=6, primary_key=True, verbose_name='Patente')
-#     marca=models.CharField(max_length=20, verbose_name="Marca Vehículo")
-#     modelo= models.CharField(max_length=20, null=True, blank=True, verbose_name='Modelo')
-#     categoria=models.ForeignKey(Categoria, on_delete=models.CASCADE)
-
-#     def __str__(self):
-#         return self.patente
+        return self.nombre
+    
+    
+class Producto(models.Model):
+    nombre = models.CharField(max_length=50)    
+    precio = models.IntegerField()
+    descripcion = models.TextField()
+    nuevo = models.BooleanField()
+    marca = models.ForeignKey(Marca, on_delete=models.PROTECT)
+    fecha_elaboracion = models.DateField()
+    imagen = models.ImageField(upload_to = "productos", null=True)
+    
+    def __str__(self):
+        return self.nombre
+    
+    
+opciones_cosultas = [
+    [0, "consulta"],
+    [1, "reclamo"],
+    [2, "sugerencia"],
+    [3, "felicitaciones"]
+    
+]   
+    
+class Contacto(models.Model):
+    nombre = models.CharField(max_length=50)
+    correo = models.EmailField()
+    tipo_consulta = models.IntegerField(choices=opciones_cosultas)
+    mensaje = models.TextField()
+    avisos = models.BooleanField()
+    
+    def __str__(self):
+        return self.nombre
+    
+    
+    

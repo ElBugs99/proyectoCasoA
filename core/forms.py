@@ -1,13 +1,22 @@
-from dataclasses import fields
-from math import prod
+from dataclasses import field, fields
+from pyexpat import model
 from django import forms
-from django.forms import ModelForm
-from .models import Product
+from .models import Contacto, Producto
 
-class ProductoForm(ModelForm):
+class ContactoForms(forms.ModelForm):
     
     class Meta:
-        model = Product
-        fields = ['id_producto','marca_producto','nombre_producto',
-                    'precio_producto','stock_producto']
+        model = Contacto
+        fields = ["nombre","correo","tipo_consulta","mensaje","avisos"]
 
+class ProductoForm(forms.ModelForm):
+    
+
+    class Meta:
+        model = Producto
+        fields = '__all__'
+        # fields = ["nombre_producto","precio_producto",
+        #         "descripcion","stock_producto","marca","imagen"]
+        widgets = {
+        "fecha_elaboracion": forms.SelectDateWidget()
+    }
